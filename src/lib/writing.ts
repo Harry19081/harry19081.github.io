@@ -26,6 +26,8 @@ export type Paper = {
   year: number
   /** Shown above the paper itself, in the manner of a journal abstract. */
   abstract?: string
+  /** Editorial aside under the abstract — dating, caveats, later context. */
+  note?: string
   /** Full-text article component. Papers are read online, never downloaded. */
   article?: ComponentType
 }
@@ -63,6 +65,8 @@ export const PAPERS: Paper[] = [
     year: 2022,
     abstract:
       'Automated content moderation is usually described as machines replacing people. This paper argues close to the opposite: the machines are made out of the people. Tracing two decades of obscenity censorship in mainland China — from the BitTorrent forums of the mid-2000s through livestreaming apps to machine-learning filters — it follows the jianhuangshi (鉴黄师), the reviewers who decide what counts as obscene, as the job moves from a small group of police officers to moderators employed by private platforms and finally to unpaid volunteers recruited through disability associations, some reviewing five thousand images a day. Along the way it explains the apparatus in plain terms: what the Great Firewall can and cannot see, why search engines and cloud storage pose different problems than websites, and how keyword filters are defeated by homophones. When Chinese technology companies announced in 2015 that AI would “liberate” these reviewers, they left out the mechanism — it was the reviewers’ own labeling that trained the models. Human judgment and algorithmic censorship are co-constitutive: the reviewers built the thing said to be replacing them.',
+    note:
+      'A note on timing: this was written in late 2022, before ChatGPT was released. The “artificial intelligence” it describes is the generation of content classifiers that preceded large language models — supervised image and text models trained on hand-labeled examples. Nothing in the argument turns on that, and the labor question it raises has only become easier to see since.',
     article: WhoTrainsTheFilter,
   },
   {

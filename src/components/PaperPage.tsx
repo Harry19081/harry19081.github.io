@@ -19,6 +19,12 @@ export function PaperPage({ paper }: { paper: Paper }) {
         </section>
       )}
 
+      {paper.note && (
+        <aside className="paper-note">
+          <p>{paper.note}</p>
+        </aside>
+      )}
+
       {Article && (
         <Suspense fallback={<p className="article-loading">Loading article…</p>}>
           <ArticleToc slug={paper.slug} />
