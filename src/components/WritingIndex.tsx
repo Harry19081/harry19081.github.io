@@ -13,7 +13,6 @@ export function WritingIndex() {
             <span className="paper-row-body">
               <span className="paper-row-title">{paper.title}</span>
               <span className="paper-row-desc">{paper.description}</span>
-              <span className="paper-row-meta">{paper.year}</span>
             </span>
             <span className="card-arrow" aria-hidden="true">&#8594;</span>
           </Link>

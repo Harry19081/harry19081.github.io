@@ -65,8 +65,8 @@ export default function App() {
             <About />
             <Work />
             <GitHubActivity />
-            <HobbiesTeaser />
             <Research />
+            <HobbiesTeaser />
           </>
         )}
       </main>

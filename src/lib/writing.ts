@@ -11,6 +11,12 @@ const BytesDanceWithBureaucracy = lazy(() =>
   })),
 )
 
+const WhoTrainsTheFilter = lazy(() =>
+  import('../articles/WhoTrainsTheFilter').then((module) => ({
+    default: module.WhoTrainsTheFilter,
+  })),
+)
+
 export type Paper = {
   slug: string
   title: string
@@ -20,14 +26,11 @@ export type Paper = {
   year: number
   /** Shown above the paper itself, in the manner of a journal abstract. */
   abstract?: string
-  /** Original PDF. When `article` is also set, this is offered as a download. */
-  pdf?: string
-  /** Full-text article component (takes precedence over `pdf`). */
+  /** Full-text article component. Papers are read online, never downloaded. */
   article?: ComponentType
 }
 
-// To add a paper: either drop a PDF in public/writing/ and set `pdf`,
-// or add a component under src/articles/ and set `article`.
+// To add a paper: add a component under src/articles/ and set `article`.
 // Newest first — the list page renders in this order.
 export const PAPERS: Paper[] = [
   {
@@ -49,6 +52,18 @@ export const PAPERS: Paper[] = [
     abstract:
       'Did workers in Mao-era state-owned enterprises have any reason to work hard? Reform-era economists answer no: with wages set administratively, differentials compressed, and bonuses abolished, effort had nothing to attach itself to. Behavioral scholars answer yes: the political and social institutions of the Maoist system generated status, identity, and reputational incentives that economistic accounts cannot see. This essay argues that the disagreement is not, at bottom, about evidence — the two camps diverge on what counts as an incentive, what counts as evidence of motivation, and over what time horizon motivation should be assessed. It proposes abandoning the yes-or-no question for a tractable one: which incentives bound, on whom, where, and when.',
     article: NoIncentiveToWorkHard,
+  },
+  {
+    slug: 'censors',
+    title: 'Who Trains the Filter',
+    subtitle:
+      'Human Reviewers and Automated Censorship in China, 2004–2021',
+    description:
+      'The people who decide what counts as obscene — and what happens to them when the algorithms arrive.',
+    year: 2022,
+    abstract:
+      'Automated content moderation is usually described as machines replacing people. This paper argues close to the opposite: the machines are made out of the people. Tracing two decades of obscenity censorship in mainland China — from the BitTorrent forums of the mid-2000s through livestreaming apps to machine-learning filters — it follows the jianhuangshi (鉴黄师), the reviewers who decide what counts as obscene, as the job moves from a small group of police officers to moderators employed by private platforms and finally to unpaid volunteers recruited through disability associations, some reviewing five thousand images a day. Along the way it explains the apparatus in plain terms: what the Great Firewall can and cannot see, why search engines and cloud storage pose different problems than websites, and how keyword filters are defeated by homophones. When Chinese technology companies announced in 2015 that AI would “liberate” these reviewers, they left out the mechanism — it was the reviewers’ own labeling that trained the models. Human judgment and algorithmic censorship are co-constitutive: the reviewers built the thing said to be replacing them.',
+    article: WhoTrainsTheFilter,
   },
   {
     slug: 'fez',

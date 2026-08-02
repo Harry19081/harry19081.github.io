@@ -6,7 +6,7 @@ export function Research() {
   const ref = useReveal<HTMLElement>()
   return (
     <section className="research reveal" ref={ref}>
-      <h2>Social Science &amp; History</h2>
+      <h2>Research</h2>
       <div className="cards">
         {PAPERS.map((paper) => (
           <Link key={paper.slug} className="card" to={`/research/${paper.slug}`}>
@@ -15,9 +15,6 @@ export function Research() {
               <span className="card-arrow" aria-hidden="true">&#8594;</span>
             </h3>
             <p>{paper.description}</p>
-            <div className="meta">
-              <span className="chip">{paper.year}</span>
-            </div>
           </Link>
         ))}
       </div>

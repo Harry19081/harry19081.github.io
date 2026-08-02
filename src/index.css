@@ -217,6 +217,11 @@ h2 {
   margin-top: 4rem;
 }
 
+.hobby-cards {
+  display: grid;
+  gap: 0.85rem;
+}
+
 .hobby-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -609,26 +614,10 @@ h2 {
   color: var(--accent);
 }
 
-/* PDF embeds */
-
 .thesis-desc {
   font-size: 0.95rem;
   color: var(--muted);
   margin: 0.25rem 0 0;
-}
-
-.pdf-viewer {
-  display: block;
-  width: 100%;
-  height: clamp(420px, 80vh, 900px);
-  margin-top: 1rem;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--card-bg);
-}
-
-.pdf-fallback {
-  padding: 1.25rem;
 }
 
 /* Writing pages */
